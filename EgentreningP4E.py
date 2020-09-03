@@ -31,3 +31,19 @@ while inputStr != "" :
 print("Summen er",total)
     
 
+total = 0.0
+count = 0
+inputStr =input("Oppgi et beløp med 1 desimal (bruk punktum som skilletegn) :")
+while inputStr != "" :
+    value = float(inputStr)
+    total = total + value
+    count += 1
+    inputStr = input("Oppgi et beløp med 1 desimal (bruk punktum som skilletegn) :")
+if count != 0 :
+    average = total / count
+    print("Gjennomsnittet er",average)
+else :
+    average = 0.0
+    print("Ingen tall er oppgitt. Gjennomsnittet er",average)
+    
+    
