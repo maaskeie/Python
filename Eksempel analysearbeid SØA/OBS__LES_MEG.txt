@@ -1,0 +1,31 @@
+Nødvendige tillegspakker som ikke ligger i lista til Anaconda:
+folium (åpne conda prompt og skriv: pip install folium)
+
+*
+Denne tekstfilen vil inneholde viktige veiledninger, tips og fremgangsmåter som ikke fremgår direkte av koden eller kommenteringen av den.
+*
+main.py filen har som hensikt å eksemplifisere bruk av de forskjellige funksjonene som er blitt laget, og må ikke betraktes som ferdig metodikk.
+*
+Mer utfyllende dokumentasjon finnes i .ipynb fila
+**
+Grunnlagsdata er mappen hvor man lagrer statisk data. Sammenstilling av informasjon som er felles vil finnes her.
+Dette er også et sted det er fint å samle csv filer, shapefiler, etc.
+**
+functions.py er en foreløpig samlingsmodul for funksjoner benyttet i main-koden. Kalles ved "from functions import *" for å få med alt enkelt.
+**
+functions.py vil bli utviklet til flere klasser etterhvert som behovet oppstår og sammenhengene som eksisterer har tydeliggjort/manifestert seg.
+**
+
+****
+Denne kodeutviklingen er galvanisert adskilt fra andre kodeløp slik at det skal holde at man jobber fra root i Atom, Spyder, Notebook(++) eller lignende.
+****
+Følgende må ligge på samme sted/samme mappe/samme filsti som filen man jobber fra: 
+
+-main.py
+-functions.py 		(modulfilen)
+-Kart.py			(Kartklasse)
+-Database.py		(Databaseklasse)
+-Passeringslinje.py	(Passeringslinjeklasse)
+-Grunnlagsdata		(Mappe for lagring av data)
+
+****

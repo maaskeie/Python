@@ -1,0 +1,68 @@
+Leksjon 1:
+
+Introduksjon 	
+
+		- Kort
+		- Binære tall
+		- Hexadesimale tall og minneadresser
+		- Løp gjennom digital logikk AND, OR, NOT
+		
+
+Første lek med python 	
+		
+		- "Hello World", print funksjonen		
+		- kalkulator
+		
+		- Tall
+			-operatorene er ganske rett frem, likevel noen tips
+			- + - * / == > < => <= != ** // %
+			-deling gjengir alltid en float
+			-kan "gulvlegge" deling ved //
+			-spesialen modular %
+			-eksponent **
+			-paranteser kan benyttes for gruppering
+			-Kan blande integer og float i beregninger (overhead/bakgrunnslogikk)
+			-siste beregnede variabel tilknyttes _ OBS!!
+		-stringer
+			-Forskjellen på '', "", """, string()
+			-printe litt artige ting
+			-operatorer på stringer
+			-\n
+			-raw strings r''
+			-Er indeksert [0], [-1]
+			-Kan slices 
+				-[0:2] 0 inkludert, 2 ekskludert
+				-[:2] Fra begynnelsen til 2 ekskludert
+				-[2:] Fra 2 inkludert til slutten
+				-[-2:0] Fra nest siste verdi til slutten
+				-"Out of range"
+				-Funksjoner eksempel len()
+		-Lister
+			-list()
+			-list = [a, b, 2]
+			-slicing
+			-konkatinering
+			-Kan endres (er mutable/altså ikke immutable)
+			-append
+			-slicetriks
+				-erstatte verdier [2:5] = [a, b, c]
+				-fjerne verdier  [2:5] = []
+				-tømme lister     [:] = []
+			-Funksjoner len()
+			-liste i liste
+		
+		Kontrollmetoder:
+			-if
+			-for
+				
+			
+			
+			
+		
+
+			
+			
+			
+			
+		
+

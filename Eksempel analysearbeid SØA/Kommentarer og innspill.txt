@@ -1,0 +1,54 @@
+15_06_20
+Fra main filen får den manuelt satte linjen en geodataframe:
+	passeringslinje = make_line(punkt1, punkt2)
+For å få variabelen til å fungerer i "Passeringslinje funksjonen" må den endres til:
+	passeringslinje = make_line(punkt1, punkt2).iloc[0]
+	evt. ved import av LineString fra shapely.geometry:
+	passeringslinje = LineString([punkt1,punkt2])
+
+
+KOMMENTAR TIL HAAKONS KOMMENTAR: 
+
+Problem som Haakon beskrev: 
+- Ved uttrekk av data for et område ved Kragerø 2019 kommer imo inn som float og float NaN. 
+- I tillegg ligger imo med ulik dtype fra AIS-data og skipsregister/skipspopulasjon. 
+
+Haakon foreslo å lage funksjonen "func_1(n)". 
+Løsningen min er anderledes enn Haakons: 
+
+skipshaler['imo_x'] = pd.to_numeric(skipshaler['imo_x'], errors='coerce').fillna(0).astype(np.int32)
+ 
+Dette sikrer at imo har samme dtype, men det er fortsatt to imo-variabler som må samkjøres. 
+Dette kan sikkert gjøres på mange måter, jeg fikk inspirasjon fra Johans funksjon "lage_haler". 
+
+Min løsning følger under. Bruk av iterrows() er en av Pythons tidstyver, og 
+bør unngås hvis man har andre alternativer. Dette må kunne lages som en funksjon, 
+og bruke apply i steden => har valgt ikke å bruke tid på dette enda. 
+
+start_time = time.time()
+imo_ = []
+for row in shaler.iterrows()):
+    
+    imo_x = row['imo_x']
+    imo_y = row['imo_y']
+    
+    if imo_x == imo_y: 
+        imo_.append(dict(imo_ny = imo_x))
+    
+    elif imo_x == 0 and imo_y > 0: 
+        imo_.append(dict(imo_ny = imo_y))
+
+    elif imo_x > 0 and imo_y == 0:
+        imo_.append(dict(imo_ny = imo_x))
+
+    else: 
+        pass 
+
+df_imo = pd.DataFrame(imo_)
+shaler = pd.concat([shaler, df_imo], axis=1)
+end_time = time.time()
+print('Kjøring brukte: {} sekunder'.format(end_time - start_time))
+
+
+
+
