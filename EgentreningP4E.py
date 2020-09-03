@@ -20,4 +20,14 @@ while count < 10:
     count += 1
     print(count)
     
+#Common loop algorithms
+# Calculating total and average
+total = 0.0
+inputStr = input("Oppgi et beløp med 1 desimal :")
+while inputStr != "" :
+    value = float(inputStr)
+    total = total + value
+    inputStr = input("Oppgi et beløp med 1 desimal :")
+print("Summen er",total)
+    
 
