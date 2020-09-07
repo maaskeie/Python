@@ -114,16 +114,20 @@ for i in range(10):
 #Evaluating strings
 #Finding matches    
 
+string = input("Oppgi en rekke med bokstaver og/eller tall: ")
 found = False
-count = 0
-while not found:
-    if count < 10:
-        print("a")
-        count += 1
-    else:
+position = 0
+while not found and position < len(string):
+    if string[position].isdigit():
         found = True
-        print(found)
-  
+    else:
+        position +=1
+if found:
+    print("The first digit of the string is in position",position)
+else:
+    print("The string does not contain a character")
+
+
             
 
 
