@@ -150,15 +150,34 @@ result2 = cubeVolume(sideLength2)
 result3 = cubeVolume(sideLength3)
 
 print()
-print("The volume of a cube with side lenght",sideLength1,"is",result1,"cm3")
-print("The volume of a cube with side lenght",sideLength2,"is",result2,"cm3")
-print("The volume of a cube with side lenght",sideLength3,"is",result3,"cm3")
+print("The volume of a cube with side length",sideLength1,"is",result1,"cm3")
+print("The volume of a cube with side length",sideLength2,"is",result2,"cm3")
+print("The volume of a cube with side length",sideLength3,"is",result3,"cm3")
 
+#Function that takes two integer values from user as a low and high boundry
+def readIntBetween(low, high):
+    value = int(input("Enter a value between " + str(low) + " and " + str(high) + " : "))
+    while value < low or value > high :
+        print("Error: Invalid entry")
+        value = int(input("Enter a value between " + str(low) + " and " + str(high) + " : "))
+    return value
 
+readIntBetween(5,10)
 
+#Example from textbook
+def main():
+    print("Please enter a time: hours, then minutes. ")
+    hours = readIntBetween(0,23)
+    minutes = readIntBetween(0,59)
+    print("You entered"" %d hours and %d minutes." % (hours,minutes))
+def readIntBetween(low,high):
+    value = int(input("Enter a value between " + str(low) + " and " + str(high) + " : "))
+    while value < low or value > high :
+        print("Error: Invalid entry")
+        value = int(input("Enter a value between " + str(low) + " and " + str(high) + " : "))
+    return value
 
-
-
+main()
 
 
 
