@@ -127,8 +127,32 @@ if found:
 else:
     print("The string does not contain a character")
 
+#Functions (ch. 5)
+def summation(a,b,c):
+    sum = a + b + c
+    return sum
+    print(sum)
+summation(3,4,5)
 
-            
+def cubeVolume(sideLength):
+    if sideLength > 0 :
+        volume = sideLength ** 3
+    else:
+        volume = 0
+    return volume
+
+sideLength1 = int(input("Oppgi en lengde i cm: "))
+sideLength2 = int(input("Oppgi en ny lengde i cm: "))
+sideLength3 = int(input("Oppgi enda en ny lengde i cm: "))
+
+result1 = cubeVolume(sideLength1)
+result2 = cubeVolume(sideLength2)
+result3 = cubeVolume(sideLength3)
+
+print()
+print("The volume of a cube with side lenght",sideLength1,"is",result1,"cm3")
+print("The volume of a cube with side lenght",sideLength2,"is",result2,"cm3")
+print("The volume of a cube with side lenght",sideLength3,"is",result3,"cm3")
 
 
 
