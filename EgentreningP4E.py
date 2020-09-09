@@ -179,6 +179,151 @@ def readIntBetween(low,high):
 
 main()
 
+#Trix oppgaver UiO - funksjoner
+#Noen telle-funksjoner
+#a
+def antallsifre(tall):
+    sifre = len(str(tall))
+    return sifre
+
+test1 = antallsifre(input("Oppgi et vilkårlig stort heltall: "))
+test2 = antallsifre(input("Oppgi enda et vilkårlig stort heltall: "))
+
+print("Antallet sifre i første tall er",test1)
+print("Antallet sifre i andre tall er",test2)
+
+#b
+def antallGittBokstav(ord,bokstav):
+    teller = 0
+    for tegn in ord:
+        if tegn == bokstav:
+            teller += 1
+    return teller
+
+test3 = antallGittBokstav("sommerferie","e")
+test4 = antallGittBokstav("sommerferie","a")
+
+def strengLengreEnnTall(streng,tall):
+    if len(streng) > tall:
+        return True
+    else: 
+        return False
+
+test5 = strengLengreEnnTall("to",4)
+test6 = strengLengreEnnTall("sommerferie",2)
+print(test5)
+print(test6)
+
+#Enkle prosedyrer og funksjoner
+#a
+def velkommen(bruker):
+    print("Hei, "+bruker+"!")
+    
+brukernavn = input("Oppgi ditt brukernavn: ")
+velkommen(brukernavn)
+
+#Alternativt:
+def hallo(x):
+    print("Hei, "+x+"!")
+    return x
+
+navn = input("Oppgi ditt navn: ")
+hallo(navn)
+#Lærdom: Kun nødvendig å etablere en sammenheng mellom formalargument og videre prosessering i funksjonskroppen
+#Kan senere kalle funksjonene med en hvilken som helst tekststring, så vil denne stringen prosesseres på samme måte
+#som formalargumentet "x" i funksjonsdefinisjonen. 
+
+navn1 = hallo(input("Oppgi ditt navn: "))
+#OBS: Resultatet av funksjonskallet over er et "NoneType object". Dette fordi "funksjonen" hallo egentlig ikke er en 
+#funksjon, men kun en prosedyre. hallo() er ikke definert med en returverdi, og derfor gir funksjonskallet den spesielle
+#verdien None i retur. Kan ikke brukes til noe.
+
+def strenginator(streng1,streng2):
+    return streng1+streng2
+
+konkatenert = strenginator("hipp","hurra")
+print(konkatenert)
+
+#Fibonacci-sekvens
+def finnAlleFibTall(opptTil):
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
