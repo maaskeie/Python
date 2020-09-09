@@ -12,13 +12,13 @@ import IPython
 
 pd.set_option('display.max_columns', 50)
 # Laster inn excelfil med årlig vekst i tonnkm fra Transportytelser 2018.
-tkm_v = pd.read_csv("C:/Python/UD/Grunnlagsdata/vekst i tranpsortytelser_2010_2018.csv", sep=";")
+tkm_v = pd.read_csv("C:/Users/33849/Documents/Python/Prognoser/Grunnlagsdata/vekst i tranpsortytelser_2010_2018.csv", sep=";")
 tkm_v['vekst'] = tkm_v ['vekst']/100
 tkm_v.head(15)
 
 
 # Laster inn skipspopulasjoen for 2019. Filen kobles til dataene på utseilt distanse for å kategorisere skipstypene på grovere kategorier. 
-df_skips_pop19 = pd.read_excel('C:/Python/UD/Grunnlagsdata/skips_pop_2019.xlsx')
+df_skips_pop19 = pd.read_excel('C:/Users/33849/Documents/Python/Prognoser/Grunnlagsdata/skips_pop_2019.xlsx')
 df_skips_pop19.head()
 df_skips_pop19.count()
 list(df_skips_pop19.columns) 
