@@ -245,9 +245,32 @@ konkatenert = strenginator("hipp","hurra")
 print(konkatenert)
 
 #Fibonacci-sekvens
-def finnAlleFibTall(opptTil):
+def finnAlleFibTall(oppTil):
     
+#Ch. 9 - Classes and objects
+#Trening etter Corey Schafer, Youtube
 
+class Employee:
+
+    def __init__(self, first_name, last_name, birthday, location):
+        """Initializing each employee with the basic information of first name,
+        last name, date of birth and location"""
+        
+        self.first_name = first_name
+        self.last_name = last_name
+        self.birthday = birthday #yyyymmdd
+        self.location = location
+        self.email = first_name + "." + last_name + "@kystverket.no"
+        self.full_name = first_name + " " + last_name
+        
+    def 
+       
+        
+emp1 = Employee("Magnus", "Skeie", 19890522, "Arendal")
+
+print(emp1.first_name)
+print(emp1.email)
+print(emp1.full_name)
 
 
 
