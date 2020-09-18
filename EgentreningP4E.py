@@ -274,9 +274,89 @@ print(emp1.full_name)
 
 
 
+class Student:
+    """Register students with names, birthday, university and department, to be able to generate their student email
+    adress"""
+    
+    def __init__(self, first_name, middle_name, last_name, birthday, university, department):
+        self.first_name = first_name
+        self.middle_name = middle_name
+        self.last_name = last_name
+        self.birthday = birthday #yyyymmdd
+        self.university = university
+        self.department = department
+    
 
+    def uni_abbreviation(self):
+        if self.university == "Universitetet i Oslo":
+            self.uni_abbreviation = "UiO"
+            return self.uni_abbreviation
+        elif self.university == "Universitetet i Tromsø":
+            self.uni_abbreviation = "UiT"
+            return self.uni_abbreviation
+        elif self.university == "Universitetet i Bergen":
+            self.uni_abbreviation = "UiB"
+            return self.uni_abbreviation
+        elif self.university == "Universitetet i Agder":
+            self.uni_abbreviation = "UiA"
+            return self.uni_abbreviation
+    
+    def dept_abbreviation(self):
+        if self.department == "Samfunnsvitenskapelig fakultet":
+            self.dept_abbreviation = "SV"
+            return self.dept_abbreviation
+        elif self.department == "Humanistisk fakultet":
+            self.dept_abbreviation = "HF"
+            return self.dept_abbreviation
+        elif self.department == "Matematisk naturvitenskapelig fakultet":
+            self.dept_abbreviation = "MN"
+            return self.dept_abbreviation
+        elif self.department == "Utdanningsvitenskapelig fakultet":
+            self.dept_abbreviation = "UV"
+            return self.dept_abbreviation
+    
+    def uni_email(self):
+        if self.middle_name == "-":
+            self.uni_email = self.first_name.lower() + "." + self.last_name.lower() + "@student." + self.dept_abbreviation.lower() + "." + self.uni_abbreviation.lower() + ".no"
+            return self.uni_email 
+        elif self.middle_name != "-":
+            self.uni_email = self.first_name.lower() + "." + self.middle_name.lower() + "." + self.last_name.lower() + "@student." + self.dept_abbreviation.lower() + "." + self.uni_abbreviation.lower() + ".no"
+            return self.uni_email 
+   
+student_1 = Student('Magnus', 'Aagaard', 'Skeie', 19890522, 'Universitetet i Oslo', 'Samfunnsvitenskapelig fakultet')
+student_2 = Student('Student2fname', '-', 'Student2lname', 19890517, 'Universitetet i Bergen', 'Humanistisk fakultet')
+student_3 = Student('Student3fname', '-', 'Student3lname', 19890401, 'Universitetet i Tromsø', 'Matematisk naturvitenskapelig fakultet')
+student_4 = Student('Student4fname', '-', 'Student4lname', 19890101, 'Universitetet i Agder', 'Utdanningsvitenskapelig fakultet')
 
+print(student_1.uni_abbreviation())
+print(student_1.dept_abbreviation())
+print(student_2.uni_abbreviation())
+print(student_2.dept_abbreviation())
+print(student_3.uni_abbreviation())
+print(student_3.dept_abbreviation())
+print(student_4.uni_abbreviation())
+print(student_4.dept_abbreviation())
+print(student_3.birthday)
+print(student_4.first_name)
+print(student_4.middle_name)
 
+student_1.uni_email = Student.uni_email(student_1)
+student_2.uni_email = Student.uni_email(student_2)
+student_3.uni_email = Student.uni_email(student_3)
+student_4.uni_email = Student.uni_email(student_4)
+
+print(student_1.uni_email)
+print(student_2.uni_email)
+print(student_3.uni_email)
+print(student_4.uni_email)    
+        
+student_5 = Student('Student5fname', '-', 'Student5lname', 20000101, 'Universitetet i Agder', 'Utdanningsvitenskapelig fakultet')
+print(student_5.first_name)
+print(student_5.middle_name)
+print(student_5.last_name) 
+print(student_5.birthday) 
+print(student_5.university) 
+print(student_5.department)
 
 
 
