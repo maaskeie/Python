@@ -376,6 +376,11 @@ class Player:
         self.pay = int(self.pay * self.pay_raise_rate)
         return self.pay
     
+    @classmethod
+    def set_raise_rate(cls, rate=1.05):
+        cls.set_raise_rate = rate
+        return cls.set_raise_rate
+    
 player1 = Player('David', 'DeGea', 350000, 'Defense')
 player2 = Player('Aron', 'Wan-Bissaka', 150000, 'Defense')
 player3 = Player('Victor', 'Lindelof', 160000, 'Defense')
@@ -403,6 +408,13 @@ print(player2.pay)
 player2.pay_raise()
 print(player2.pay)
 
+Player.pay_raise(player1)
+print(player1.pay)
+
+# #Testing the classmethod set_raise_rate
+# Player.set_raise_rate()
+# player1.pay_raise()
+# print(player1.pay)
 
 
 
