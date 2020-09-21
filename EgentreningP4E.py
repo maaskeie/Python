@@ -358,12 +358,50 @@ print(student_5.birthday)
 print(student_5.university) 
 print(student_5.department)
 
+#New example on class methods, static methods, inheritance, subclasses and special commands
+#Manchester United Football Club 
 
+class Player:
+    """Class that keeps track of players in the current starting XI of the club, and their names, salaries etc."""
+    
+    pay_raise_rate = 1.05
+    
+    def __init__(self, first, last, pay, position):
+        self.first = first
+        self.last = last
+        self.pay = pay
+        self.position = position
+    
+    def pay_raise(self):
+        self.pay = int(self.pay * self.pay_raise_rate)
+        return self.pay
+    
+player1 = Player('David', 'DeGea', 350000, 'Defense')
+player2 = Player('Aron', 'Wan-Bissaka', 150000, 'Defense')
+player3 = Player('Victor', 'Lindelof', 160000, 'Defense')
+player4 = Player('Harry', 'Maguire', 190000, 'Defense')
+player5 = Player('Luke', 'Shaw', 125000, 'Defense')
+player6 = Player('Donny', 'Van de Beek', 175000, 'Midfield')
+player7 = Player('Bruno', 'Fernandes', 210000, 'Midfield')
+player8 = Player('Paul', 'Pogba', 280000, 'Midfield')
+player9 = Player('Mason', 'Greenwood', 135000, 'Forward')
+player10 = Player('Marcus', 'Rashford', 220000, 'Forward')
+player11 = Player('Anthony', 'Martial', 230000, 'Forward')
 
+print(player1.pay)
+print(player10.position)
+    
+print(player1.pay)
+print(player2.pay)
+player1.pay_raise()
+print(player2.pay)
 
+player1.pay_raise()    
+print(player1.pay)
+print(player2.pay)
 
-
-
+player2.pay_raise()
+print(player2.pay)
 
 
 
