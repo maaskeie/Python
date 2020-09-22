@@ -364,22 +364,19 @@ print(student_5.department)
 class Player:
     """Class that keeps track of players in the current starting XI of the club, and their names, salaries etc."""
     
-    pay_raise_rate = 1.05
-    
     def __init__(self, first, last, pay, position):
         self.first = first
         self.last = last
         self.pay = pay
         self.position = position
     
-    def pay_raise(self):
-        self.pay = int(self.pay * self.pay_raise_rate)
-        return self.pay
-    
     @classmethod
     def set_raise_rate(cls, rate=1.05):
-        cls.set_raise_rate = rate
-        return cls.set_raise_rate
+        return cls.set_raise_rate()
+    
+    def pay_raise(self):
+        self.pay_raise = int(self.pay * cls.set_raise_rate())
+        return self.pay_raise
     
 player1 = Player('David', 'DeGea', 350000, 'Defense')
 player2 = Player('Aron', 'Wan-Bissaka', 150000, 'Defense')
@@ -395,28 +392,12 @@ player11 = Player('Anthony', 'Martial', 230000, 'Forward')
 
 print(player1.pay)
 print(player10.position)
-    
-print(player1.pay)
-print(player2.pay)
-player1.pay_raise()
-print(player2.pay)
-
-player1.pay_raise()    
-print(player1.pay)
-print(player2.pay)
-
-player2.pay_raise()
-print(player2.pay)
-
-Player.pay_raise(player1)
-print(player1.pay)
 
 # #Testing the classmethod set_raise_rate
 # Player.set_raise_rate()
 # player1.pay_raise()
-# print(player1.pay)
 
-
+#Test if this last specification works
 
 
 
