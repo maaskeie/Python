@@ -1,0 +1,62 @@
+ANACONDA 
+
+# http://datumorphism.com/til/programming/python/python-anaconda-install-requirements/
+# https://www.anaconda.com/blog/understanding-conda-and-pip#:~:text=Pip%20is%20the%20Python%20Packaging,as%20wheels%20or%20source%20distributions.&text=Pip%20installs%20Python%20packages%20whereas,software%20written%20in%20any%20language.
+# https://www.anaconda.com/blog/using-pip-in-a-conda-environment
+# https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html
+# HUSK Cheat-Sheet 
+
+# https://veranostech.github.io/docs-korean-conda-docs/docs/build/html/commands/conda-install.html  ==>> VIKTIG 
+
+
+# Lager requirements-fil => blir liggende i mappen du står i (i terminalen) når du kjører denne linjen: 
+pip freeze > requirements.txt
+conda list -e > requirements.txt
+#conda list --explicit > example_env.txt
+
+# Hvilke environments har du
+conda info --envs
+
+# Slette spesifikt environment 
+conda remove --name myenv --all
+conda env remove --name myenv
+
+# Aktivere og deaktivere environment 
+conda activate myenv 
+conda deactivate 
+
+conda env --help
+
+conda update conda
+conda update anaconda=VersionNumber
+
+# Oppdaterer alle pakker i miljøet til seneste versjon 
+conda update -n myenv --all
+
+# Install conda environment with pip inside 
+# Steg 1: 
+conda create -n yourenv pip # lage ny env med pip, kan også lages uten pip (bare ta bort 'pip')
+
+# Steg 2: 
+conda install --file requirements.txt
+conda env create --file requirements.txt # linje må kjøres i samme mappe der du lagret txt-filen, og nytt miljø må også være aktivtert før kjøring av denne linje 
+conda env create --file environment.yml
+
+# STEP 3: Installing conda-forge channel can be achieved by adding conda-forge to your channels with:. 
+# From now on using conda install <package-name> will also find packages in our conda-forge channels. 
+conda config --add channels conda-forge
+conda config --set channel_priority strict # This will ensure that all the dependencies will come from the conda-forge channel unless they exist only on defaults.
+
+# Steg 4: Once the conda-forge channel has been enabled, python-dotenv can be installed with:
+# alle ekstra pakker bør skrives inn i én linje for å få best konsistens i versjonshåndtering 
+conda install python-dotenv==0.14.0
+conda install jupyter
+conda install geopandas=0.8.1 geopy= 2.0.0 plotly=4.9.0 shapely
+conda install -c conda-forge descartes # måtte tas direkte fra conda-forge fordi den ikke lenger ligger i conda ('-c' = channel, se weblink over for kommando)
+
+# denne linja tok VELDIG lang tid å kjøre => mange konflikter (vet ikke hvorfor), så ut til flere pakker ikke ble installert 
+conda install geopandas geopy python-dotenv plotly shapely psycopg2 
+
+
+#------------------------------------------------------------------------------
+
